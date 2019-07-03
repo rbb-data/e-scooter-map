@@ -16,7 +16,7 @@ import _ from './styles.sass'
  */
 const MapSelectableMarker = props => {
   const {
-    key,
+    id: key,
     isSelected,
     optimizeForTouch,
     fillColor,
@@ -56,7 +56,7 @@ const MapSelectableMarker = props => {
 }
 
 MapSelectableMarker.propTypes = {
-  key: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
   /** see: https://leafletjs.com/reference-1.3.4.html#latlng */
   position: PropTypes.instanceOf(L.LatLng).isRequired,
   /** changes the size and style of the marker */

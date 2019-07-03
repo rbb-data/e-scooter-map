@@ -1,4 +1,4 @@
-# rbb-data starter
+# e schooter heatmap
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Folder structure
