@@ -27,23 +27,22 @@ Papa.parse(content, {
       }
     })
 
-    // filter out invalid locations
-    const locs = features.filter(feature => {
-      return !!feature.geometry.coordinates[0] && !!feature.geometry.coordinates[1]
-    })
-
-    // filter out duplicates
     let seen = {}
-    const unique = locs.filter(feature => {
-      const isDuplicate = seen[feature.properties.id]
-      seen[feature.properties.id] = true
-
-      return !isDuplicate
-    })
 
     const output = {
       type: 'FeatureCollection',
-      features: unique
+      features: features
+        // filter out invalid locations
+        .filter(feature => {
+          return !!feature.geometry.coordinates[0] && !!feature.geometry.coordinates[1]
+        })
+        // filter out duplicates
+        .filter(feature => {
+          const isDuplicate = seen[feature.properties.id]
+          seen[feature.properties.id] = true
+
+          return !isDuplicate
+        })
     }
 
     fs.writeFile(path.join(__dirname, '../public/markers.geo.json'), JSON.stringify(output), error => {
