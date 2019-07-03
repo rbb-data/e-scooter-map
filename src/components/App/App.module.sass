@@ -15,10 +15,6 @@
     display: flex
     flex-direction: column
 
-.detail
-  width: 100%
-  flex: 1 1 auto
-
 .mapWrapper
   position: relative
   flex: 100 1 auto
@@ -32,9 +28,11 @@
   width: 100%
   height: 100%
 
-.search
-  position: absolute
-  top: 20px
-  left: 20px
-  width: calc(100% - 40px)
-  z-index: 1000
+.filter
+  background-color: $light-grey
+
+  & > label
+    display: block
+    color: $dark-grey
+    font-size: 12px
+    margin: 5px 10px

@@ -52,6 +52,7 @@ export default function Markers (props) {
 
   return <MarkerClusterGroup
     maxClusterRadius={10}
+    zoomToBoundsOnClick={false}
     showCoverageOnHover={false}
     disableClusteringAtZoom={16}
     iconCreateFunction={createClusterIcon}>
