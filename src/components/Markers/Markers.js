@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import L from 'leaflet'
 import CircleMarker from '../CircleMarker/CircleMarker'
 import { featureToLatLng } from '../../shared/lib/geoJsonCompat'
-import { red, bordeaux } from '../../shared/styles/colors.sass'
+// import { red } from '../../shared/styles/colors.sass'
 import MarkerClusterGroup from '../MarkerClusterGroup/MarkerClusterGroup'
 import _ from './Markers.module.sass'
 
@@ -22,6 +22,9 @@ function getOpacity (childCount) {
 
   return opacity
 }
+
+const red = '#699b32'
+const bordeaux = '#1e5a3a'
 
 function createClusterIcon (cluster) {
   const childCount = cluster.getChildCount()
@@ -60,12 +63,12 @@ export default function Markers (props) {
       <CircleMarker
         key={marker.properties.id}
         center={featureToLatLng(marker)}
-        radius={3}
+        radius={1}
         interactive={false}
         weight={1}
         color={bordeaux}
-        fillColor={red}
-        fillOpacity={0.1}
+        fillColor={bordeaux}
+        fillOpacity={1}
       />
     )}
   </MarkerClusterGroup>
