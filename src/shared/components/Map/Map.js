@@ -57,8 +57,7 @@ const Map = props => {
     ]
   }
 
-  const mapStyle = 'trs|lv:false;fc:EAEAEA_pp|lv:false;v:false_ar|v:false;lv:false_vg|v:true;fc:E4E4E4_wt|fc:AED1E4_rd|sc:d0d0d0;fc:e9e9e9_mr|sc:d3d3d3;fc:dddddd_hg|sc:d3d3d3;fc:e9e9e9_g|lc:EAEAEA'
-  const mapStyle2 = 'trs|lv:true;fc:DFDED2_pp|lv:false;v:false_ar|v:false;lv:false_vg|v:true;fc:E4E4E4_wt|fc:86c6ed_rd|sc:C9C9C3;fc:dfded2;lv:false_mr|sc:D5D4C9;fc:D5D4C9;lv:true_hg|sc:D5D4C9;fc:D5D4C9;lv:true_g|lc:DFDED2'
+  const mapStyle = 'trs|lv:true;fc:EAEAEA_pp|lv:false;v:false_ar|v:false;lv:false_vg|v:true;fc:E4E4E4_wt|fc:AED1E4_rd|sc:d0d0d0;fc:e9e9e9;lv:false_mr|sc:d3d3d3;fc:dddddd;lv:true_hg|sc:d3d3d3;fc:e9e9e9;lv:true_g|lc:EAEAEA'
   const mapClassName = `${className} ${_.map}`
 
   return <LeafletMap className={mapClassName} {...mapProps} {...forwardedProps}>
@@ -67,7 +66,7 @@ const Map = props => {
       bingkey={bingKey}
       culture='de-de'
       // eslint-disable-next-line react/style-prop-object
-      style={mapStyle2} />
+      style={mapStyle} />
 
     <GeoJSON
       data={berlinMask}
