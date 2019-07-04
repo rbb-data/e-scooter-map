@@ -8,7 +8,7 @@ import MarkerClusterGroup from '../MarkerClusterGroup/MarkerClusterGroup'
 import _ from './Markers.module.sass'
 
 function getSize (childCount) {
-  const radius = childCount
+  const radius = childCount * 0.5
   if (radius < 10) return 10
   if (radius > 48) return 48
 
@@ -38,11 +38,11 @@ function createClusterIcon (cluster) {
         stroke-opacity="1"
         stroke-width="2"
         stroke='${bordeaux}' />
-        <text x="50" y="50" text-anchor="middle" dx="-0.05em" dy=".3em" class="${_.circleText}">
-          ${childCount > 19 ? childCount : ''}
+        <text x="50" y="50" text-anchor="middle" dx="-0.03em" dy=".35em" class="${_.circleText}">
+          ${childCount > 24 ? childCount : ''}
         </text>
     </svg>`,
-  iconSize: [60, 60],
+  iconSize: [50, 50],
   className: _.divIcon
   })
 }
@@ -51,7 +51,7 @@ export default function Markers (props) {
   const { markers } = props
 
   return <MarkerClusterGroup
-    maxClusterRadius={10}
+    maxClusterRadius={5}
     zoomToBoundsOnClick={false}
     showCoverageOnHover={false}
     disableClusteringAtZoom={16}
