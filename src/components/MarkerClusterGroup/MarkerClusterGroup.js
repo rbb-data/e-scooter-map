@@ -23,12 +23,12 @@ class MarkerClusterGroup extends MapLayer {
     this.contextValue = { layerContainer: markerClusterGroup, map }
 
     // Initializing event listeners
-    Object.entries(clusterEvents).forEach(
-      ([eventAsProp, callback]) => {
-        const clusterEvent = `cluster${eventAsProp.substring(2).toLowerCase()}`
-        markerClusterGroup.on(clusterEvent, callback)
-      }
-    )
+    // Object.entries(clusterEvents).forEach(
+    //   ([eventAsProp, callback]) => {
+    //     const clusterEvent = `cluster${eventAsProp.substring(2).toLowerCase()}`
+    //     markerClusterGroup.on(clusterEvent, callback)
+    //   }
+    // )
 
     return markerClusterGroup
   }

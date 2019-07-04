@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import L from 'leaflet'
-import { CircleMarker } from 'react-leaflet'
+import CircleMarker from '../CircleMarker/CircleMarker'
 import { featureToLatLng } from '../../shared/lib/geoJsonCompat'
 import { red, bordeaux } from '../../shared/styles/colors.sass'
 import MarkerClusterGroup from '../MarkerClusterGroup/MarkerClusterGroup'
@@ -23,32 +23,32 @@ function getOpacity (childCount) {
   return opacity
 }
 
+function createClusterIcon (cluster) {
+  const childCount = cluster.getChildCount()
+  const size = getSize(childCount)
+
+  return L.divIcon({ html:
+    `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <circle
+        cx="50"
+        cy="50"
+        r="${size}"
+        fill="${red}"
+        fill-opacity="${getOpacity(childCount)}"
+        stroke-opacity="1"
+        stroke-width="2"
+        stroke='${bordeaux}' />
+        <text x="50" y="50" text-anchor="middle" dx="-0.05em" dy=".3em" class="${_.circleText}">
+          ${childCount > 19 ? childCount : ''}
+        </text>
+    </svg>`,
+  iconSize: [60, 60],
+  className: _.divIcon
+  })
+}
+
 export default function Markers (props) {
   const { markers } = props
-
-  function createClusterIcon (cluster) {
-    const childCount = cluster.getChildCount()
-    const size = getSize(childCount)
-
-    return L.divIcon({ html:
-      `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-        <circle
-          cx="50"
-          cy="50"
-          r="${size}"
-          fill="${red}"
-          fill-opacity="${getOpacity(childCount)}"
-          stroke-opacity="1"
-          stroke-width="2"
-          stroke='${bordeaux}' />
-          <text x="50" y="50" text-anchor="middle" dx="-0.05em" dy=".3em" class="${_.circleText}">
-            ${childCount > 19 ? childCount : ''}
-          </text>
-      </svg>`,
-    iconSize: [60, 60],
-    className: _.divIcon
-    })
-  }
 
   return <MarkerClusterGroup
     maxClusterRadius={10}
@@ -58,6 +58,7 @@ export default function Markers (props) {
     iconCreateFunction={createClusterIcon}>
     {markers.map(marker =>
       <CircleMarker
+        key={marker.properties.id}
         center={featureToLatLng(marker)}
         radius={3}
         interactive={false}

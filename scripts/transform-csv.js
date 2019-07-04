@@ -10,12 +10,13 @@ Papa.parse(content, {
     let features = results.data.map(entry => {
       // change format if there's a different local place name
       const vehicleId = entry.vehicle_id
+      const vendor = Math.random() > 0.5 ? 'circ' : 'lime'
 
       return {
         type: 'Feature',
         properties: {
           id: vehicleId,
-          vendor: 'circ'
+          vendor: vendor
         },
         geometry: {
           type: 'Point',
