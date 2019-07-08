@@ -58,15 +58,16 @@ const Map = props => {
   }
 
   const mapStyle = 'trs|lv:true;fc:EAEAEA_pp|lv:false;v:false_ar|v:false;lv:false_vg|v:true;fc:E4E4E4_wt|fc:AED1E4_rd|sc:d0d0d0;fc:e9e9e9;lv:false_mr|sc:d3d3d3;fc:dddddd;lv:true_hg|sc:d3d3d3;fc:e9e9e9;lv:true_g|lc:EAEAEA'
+  const darkStyle = 'trs|lv:true_pp|lv:false;v:false_ar|v:false;lv:false_vg|v:true_rd|lv:false_mr|lv:true_hg|lv:true'
   const mapClassName = `${className} ${_.map}`
 
   return <LeafletMap className={mapClassName} {...mapProps} {...forwardedProps}>
     <BingLayer
-      type='CanvasGray'
+      type='CanvasDark'
       bingkey={bingKey}
       culture='de-de'
       // eslint-disable-next-line react/style-prop-object
-      style={mapStyle} />
+      style={darkStyle} />
 
     <GeoJSON
       data={berlinMask}

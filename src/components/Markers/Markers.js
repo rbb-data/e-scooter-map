@@ -72,11 +72,12 @@ export default function Markers (props) {
       center={featureToLatLng(marker)}
       radius={zoom * zoom / 100}
       interactive={false}
-      fillColor={red}
-      color={bordeaux}
+      stroke={false}
+      fillColor={'#f03ca0'}
+      color={'white'}
       weight={1}
       opacity={0.3}
-      fillOpacity={zoom * zoom * zoom / 10000}
+      fillOpacity={0.3}
     />
   )
 

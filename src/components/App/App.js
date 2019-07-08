@@ -57,8 +57,8 @@ function App (props) {
     </div>
     <div className={_.filter}>
       <label className={_.timeLabel}>Fr. 05.06.2019 <strong>{hour}:00 Uhr</strong></label>
-      <label>{numberOfScootersByHour[hour] || 0} Roller</label>
       <HourSelector selectedHour={hour} onChange={setHour} histogramData={numberOfScootersByHour} />
+      <label>{numberOfScootersByHour[hour] || 0} Roller</label>
     </div>
   </div>
 }
