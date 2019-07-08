@@ -8,10 +8,11 @@ import _ from './HourSelector.module.sass'
 
 export default function HourSelector (props) {
   const { selectedHour, histogramData, onChange } = props
-  const [isAnimating, setIsAnimating] = useAutoStepper((step) => {
-    onChange(step)
-    return (step + 1) % 24
-  }, selectedHour, 1000)
+  const [isAnimating, setIsAnimating] = useAutoStepper(() => {
+    const next = (selectedHour + 1) % 24
+    onChange(next)
+    return next
+  }, 1000)
 
   return <div className={_.wrapper}>
     <button className={_.button} onClick={() => { setIsAnimating(!isAnimating) }}>

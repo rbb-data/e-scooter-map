@@ -1,8 +1,8 @@
 import { useState, useEffect, useRef } from 'react'
 
-export default function useAutoStepper (handler, initialValue, timeout) {
+export default function useAutoStepper (handler, timeout) {
   const [isAnimating, setIsAnimating] = useState(false)
-  const [step, setStep] = useState(initialValue)
+  const [step, setStep] = useState(0)
   const prevIsAnimatingState = useRef(false)
   const timeoutId = useRef(null)
 

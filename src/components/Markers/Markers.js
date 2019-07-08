@@ -56,9 +56,11 @@ export default function Markers (props) {
   const { markers } = props
 
   return <MarkerClusterGroup
-    maxClusterRadius={7}
+    chunkedLoading
+    maxClusterRadius={10}
     zoomToBoundsOnClick={false}
     showCoverageOnHover={false}
+    spiderfyOnMaxZoom={false}
     disableClusteringAtZoom={16}
     iconCreateFunction={createClusterIcon}>
     {markers.map(marker =>
