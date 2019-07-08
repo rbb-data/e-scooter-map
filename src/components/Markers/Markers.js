@@ -10,7 +10,7 @@ import _ from './Markers.module.sass'
 
 function getSize (childCount) {
   const radius = childCount * 0.5
-  if (radius < 3) return 3
+  if (radius < 5) return 5
   if (radius > 48) return 48
 
   return radius
@@ -48,7 +48,7 @@ function createClusterIcon (cluster) {
           ${size > 15 ? childCount : ''}
         </text>
     </svg>`,
-  iconSize: [40, 40],
+  iconSize: [35, 35],
   className: _.divIcon
   })
 }
@@ -70,15 +70,13 @@ export default function Markers (props) {
     <CircleMarker
       key={marker.properties.id}
       center={featureToLatLng(marker)}
-      radius={zoom / 9}
-      // interactive={false}
-      stroke={false}
-      fillColor={bordeaux}
-      // color={bordeaux}
-      // weight={1}
-      // opacity={0.3}
-      fillOpacity={0.5}
-      onClick={() => { console.log(marker) }}
+      radius={zoom * zoom / 100}
+      interactive={false}
+      fillColor={red}
+      color={bordeaux}
+      weight={1}
+      opacity={0.3}
+      fillOpacity={zoom * zoom * zoom / 10000}
     />
   )
 
@@ -88,13 +86,13 @@ export default function Markers (props) {
   //   zoomToBoundsOnClick={false}
   //   showCoverageOnHover={false}
   //   spiderfyOnMaxZoom={false}
-  //   disableClusteringAtZoom={16}
+  //   disableClusteringAtZoom={12}
   //   iconCreateFunction={createClusterIcon}>
   //   {markers.map(marker =>
   //     <CircleMarker
   //       key={marker.properties.id}
   //       center={featureToLatLng(marker)}
-  //       radius={1}
+  //       radius={zoom * zoom / 100}
   //       interactive={false}
   //       stroke={false}
   //       fillColor={bordeaux}

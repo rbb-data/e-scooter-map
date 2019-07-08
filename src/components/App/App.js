@@ -12,7 +12,7 @@ const filterOptions = ['Alle', 'circ', 'lime', 'tier', 'voi']
 
 function App (props) {
   const [markers, setMarkers] = useState([])
-  const [hour, setHour] = useState(19)
+  const [hour, setHour] = useState(18)
   const [vendorFilter, setVendorFilter] = useState('Alle')
 
   useEffect(() => {

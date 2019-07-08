@@ -13,7 +13,7 @@ export default function Histogram (props) {
 
   return <svg
     className={_.svg}
-    viewBox={`0 0 ${values.length} 3`}
+    viewBox={`0 0 ${values.length} 2`}
     width='100%'
     xmlns='http://www.w3.org/2000/svg'>
     {normalizedValues.map((val, i) =>
@@ -31,7 +31,7 @@ export default function Histogram (props) {
           cx={i + 0.5}
           cy='1.5'
           fill={i === highlight ? red : darkGrey} /> */}
-        { i % 2 !== 0 &&
+        { i % 2 === 0 &&
           <text className={_.text} x={i + 0.5} y='2' textAnchor='middle' fill={i === highlight ? red : darkGrey}>{i}</text>
         }
       </g>

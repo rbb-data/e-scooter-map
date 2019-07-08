@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import 'leaflet/dist/leaflet.css'
-import { Map as LeafletMap, ZoomControl, GeoJSON } from 'react-leaflet'
+import { Map as LeafletMap, ZoomControl, GeoJSON, Rectangle } from 'react-leaflet'
 import { BingLayer } from 'react-leaflet-bing'
 
 import berlinMask from '../../data/berlin.geo.json'
@@ -26,8 +26,8 @@ const Map = props => {
   const berlin = {
     center: { lat: 52.5244, lng: 13.4105 },
     bounds: {
-      topleft: { lat: 52.6, lng: 13.2 },
-      bottomright: { lat: 52.4, lng: 13.6 }
+      topleft: { lat: 52.57, lng: 13.27 },
+      bottomright: { lat: 52.468, lng: 13.53 }
     },
     maxBounds: {
       topleft: { lat: 52.8, lng: 12.9 },
@@ -74,6 +74,8 @@ const Map = props => {
       fillOpacity={0.8}
       color='white'
       stroke={false} />
+
+    {/* <Rectangle bounds={mapProps.bounds} /> */}
 
     <ZoomControl position='bottomright' />
 
