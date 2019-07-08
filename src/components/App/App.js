@@ -44,7 +44,7 @@ function App (props) {
       </Map>
     </div>
     <div className={_.filter}>
-      <HourSelector selectedHour={hour} onChange={setHour} />
+      <HourSelector selectedHour={hour} onChange={setHour} markers={markers} />
       <label htmlFor='vendorSelector'>Nach Anbieter filtern:</label>
       <TabBar id='vendorSelector'
         title='Anbieter auswählen'
