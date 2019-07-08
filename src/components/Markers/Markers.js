@@ -16,9 +16,9 @@ function getSize (childCount) {
 }
 
 function getOpacity (childCount) {
-  const opacity = childCount * 0.009
-  if (opacity < 0.1) return 0.2
-  if (opacity > 0.8) return 0.8
+  const opacity = childCount * 0.004
+  if (opacity < 0.2) return 0.2
+  if (opacity > 0.5) return 0.5
 
   return opacity
 }
@@ -47,7 +47,7 @@ function createClusterIcon (cluster) {
           ${size > 15 ? childCount : ''}
         </text>
     </svg>`,
-  iconSize: [50, 50],
+  iconSize: [40, 40],
   className: _.divIcon
   })
 }
@@ -56,7 +56,7 @@ export default function Markers (props) {
   const { markers } = props
 
   return <MarkerClusterGroup
-    maxClusterRadius={5}
+    maxClusterRadius={7}
     zoomToBoundsOnClick={false}
     showCoverageOnHover={false}
     disableClusteringAtZoom={16}

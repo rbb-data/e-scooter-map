@@ -12,6 +12,7 @@ export default function Histogram (props) {
   const margin = 0.1
 
   return <svg
+    className={_.svg}
     viewBox={`0 0 ${values.length} 3`}
     width='100%'
     xmlns='http://www.w3.org/2000/svg'>
