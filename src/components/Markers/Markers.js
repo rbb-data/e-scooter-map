@@ -9,14 +9,14 @@ import _ from './Markers.module.sass'
 
 function getSize (childCount) {
   const radius = childCount * 0.5
-  if (radius < 10) return 10
+  if (radius < 3) return 3
   if (radius > 48) return 48
 
   return radius
 }
 
 function getOpacity (childCount) {
-  const opacity = childCount * 0.02
+  const opacity = childCount * 0.009
   if (opacity < 0.1) return 0.2
   if (opacity > 0.8) return 0.8
 
@@ -43,8 +43,8 @@ function createClusterIcon (cluster) {
         stroke-opacity="1"
         stroke-width="2"
         stroke='${bordeaux}' />
-        <text x="50" y="50" text-anchor="middle" dx="-0.03em" dy=".35em" class="${_.circleText}">
-          ${childCount > 24 ? childCount : ''}
+        <text x="50" y="50" text-anchor="middle" dx="-0.03em" dy=".38em" class="${_.circleText}">
+          ${size > 15 ? childCount : ''}
         </text>
     </svg>`,
   iconSize: [50, 50],
@@ -67,8 +67,7 @@ export default function Markers (props) {
         center={featureToLatLng(marker)}
         radius={1}
         interactive={false}
-        weight={1}
-        color={bordeaux}
+        stroke={false}
         fillColor={bordeaux}
         fillOpacity={1}
       />
