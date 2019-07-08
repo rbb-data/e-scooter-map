@@ -27,30 +27,38 @@ function App (props) {
   // ⬆️ the second parameter to useEffect are its dependencies
   //  if the array is empty it runs only once otherwise it runs when depencies change
 
-  const filteredMarkers = markers.filter(marker => {
-    const vendorIsMatching = vendorFilter === 'Alle' || marker.properties.vendor === vendorFilter
-    const hourIsMatching = marker.properties.hour === hour
+  const filteredByVendor = markers.filter(marker =>
+    vendorFilter === 'Alle' || marker.properties.vendor === vendorFilter)
+  const filteredByHour = filteredByVendor.filter(marker => marker.properties.hour === hour)
 
-    return vendorIsMatching && hourIsMatching
-  })
+  // TODO maybe cache this
+  const numberOfScootersByHour = filteredByVendor.reduce((array, marker) => {
+    const hour = marker.properties.hour
+    array[hour] = (array[hour] || 0) + 1
+    return array
+  }, [])
 
   return <div className={_.app}>
-    <div className={_.mapWrapper}>
-      <Map
-        bingKey={process.env.REACT_APP_BING_KEY}
-        className={_.map}>
-
-        <Markers markers={filteredMarkers} />
-      </Map>
-    </div>
     <div className={_.filter}>
-      <HourSelector selectedHour={hour} onChange={setHour} markers={markers} />
-      <label htmlFor='vendorSelector'>Nach Anbieter filtern:</label>
+      <label htmlFor='vendorSelector'>Anbieter:</label>
       <TabBar id='vendorSelector'
         title='Anbieter auswählen'
         selectedTab={vendorFilter}
         tabs={filterOptions}
         onSelect={setVendorFilter} />
+    </div>
+    <div className={_.mapWrapper}>
+      <Map
+        bingKey={process.env.REACT_APP_BING_KEY}
+        className={_.map}>
+
+        <Markers markers={filteredByHour} />
+      </Map>
+    </div>
+    <div className={_.filter}>
+      <label className={_.timeLabel}>Fr. 05.06.2019 <strong>{hour}:00 Uhr</strong></label>
+      <label>{numberOfScootersByHour[hour] || 0} Roller</label>
+      <HourSelector selectedHour={hour} onChange={setHour} histogramData={numberOfScootersByHour} />
     </div>
   </div>
 }
