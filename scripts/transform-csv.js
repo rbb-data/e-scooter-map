@@ -7,14 +7,14 @@ Papa.parse(content, {
   header: true,
   skipEmptyLines: true,
   complete: function (results) {
-    let features = results.data.map(entry => {
+    let features = results.data.map((entry, i) => {
       // change format if there's a different local place name
-      const vehicleId = entry.vehicle_id
+      // const vehicleId = entry.vehicle_id
 
       return {
         type: 'Feature',
         properties: {
-          id: vehicleId,
+          id: i,
           hour: +entry.hour_of_day,
           vendor: entry.provider
         },

@@ -17,7 +17,7 @@ export default function HourSelector (props) {
   return <div className={_.wrapper}>
     <button className={_.button} onClick={() => { setIsAnimating(!isAnimating) }}>
       {isAnimating
-        ? <img src={stopIcon} alt='play' />
+        ? <img src={stopIcon} alt='stop' />
         : <img src={playIcon} alt='play' />
       }
     </button>

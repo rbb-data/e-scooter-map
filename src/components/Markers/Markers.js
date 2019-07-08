@@ -55,6 +55,22 @@ function createClusterIcon (cluster) {
 export default function Markers (props) {
   const { markers } = props
 
+  // return markers.map(marker =>
+  //   <CircleMarker
+  //     key={marker.properties.id}
+  //     center={featureToLatLng(marker)}
+  //     radius={1}
+  //     // interactive={false}
+  //     stroke={false}
+  //     fillColor={bordeaux}
+  //     color={bordeaux}
+  //     weight={1}
+  //     opacity={0.3}
+  //     fillOpacity={0.5}
+  //     onClick={() => { console.log(marker) }}
+  //   />
+  // )
+
   return <MarkerClusterGroup
     chunkedLoading
     maxClusterRadius={10}
