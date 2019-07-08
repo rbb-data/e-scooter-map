@@ -11,11 +11,13 @@ Papa.parse(content, {
       // change format if there's a different local place name
       const vehicleId = entry.vehicle_id
       const vendor = Math.random() > 0.5 ? 'circ' : 'lime'
+      const hour = Math.floor(Math.random() * 24)
 
       return {
         type: 'Feature',
         properties: {
           id: vehicleId,
+          hour: hour,
           vendor: vendor
         },
         geometry: {
