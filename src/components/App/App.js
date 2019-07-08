@@ -56,9 +56,11 @@ function App (props) {
       </Map>
     </div>
     <div className={_.filter}>
-      <label className={_.timeLabel}>Fr. 05.06.2019 <strong>{hour}:00 Uhr</strong></label>
+      <div className={_.labelWrapper}>
+        <label className={_.timeLabel}>Fr. 05.06.2019 <strong>{hour}:00 Uhr</strong></label>
+        <label className={_.countLabel}>{numberOfScootersByHour[hour] || 0} Roller</label>
+      </div>
       <HourSelector selectedHour={hour} onChange={setHour} histogramData={numberOfScootersByHour} />
-      <label>{numberOfScootersByHour[hour] || 0} Roller</label>
     </div>
   </div>
 }

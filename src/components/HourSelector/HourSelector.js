@@ -11,8 +11,7 @@ export default function HourSelector (props) {
   const [isAnimating, setIsAnimating] = useAutoStepper(() => {
     const next = (selectedHour + 1) % 24
     onChange(next)
-    return next
-  }, 1000)
+  }, [selectedHour, onChange], 500)
 
   return <div className={_.wrapper}>
     <button className={_.button} onClick={() => { setIsAnimating(!isAnimating) }}>
@@ -24,7 +23,10 @@ export default function HourSelector (props) {
     <Histogram
       values={histogramData}
       highlight={selectedHour}
-      onClick={onChange} />
+      onClick={hour => {
+        onChange(hour)
+        setIsAnimating(false)
+      }} />
   </div>
 }
 

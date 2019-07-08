@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import 'leaflet/dist/leaflet.css'
-import { Map as LeafletMap, ZoomControl, GeoJSON, Rectangle } from 'react-leaflet'
+import { Map as LeafletMap, ZoomControl, GeoJSON } from 'react-leaflet'
 import { BingLayer } from 'react-leaflet-bing'
 
 import berlinMask from '../../data/berlin.geo.json'
@@ -58,7 +58,7 @@ const Map = props => {
   }
 
   const mapStyle = 'trs|lv:true;fc:EAEAEA_pp|lv:false;v:false_ar|v:false;lv:false_vg|v:true;fc:E4E4E4_wt|fc:AED1E4_rd|sc:d0d0d0;fc:e9e9e9;lv:false_mr|sc:d3d3d3;fc:dddddd;lv:true_hg|sc:d3d3d3;fc:e9e9e9;lv:true_g|lc:EAEAEA'
-  const darkStyle = 'trs|lv:true_pp|lv:false;v:false_ar|v:false;lv:false_vg|v:true_rd|lv:false_mr|lv:true_hg|lv:true'
+  const darkStyle = 'trs|lv:true_pp|lv:false;v:false_ar|v:false;lv:false_vg|v:true_wt|lv:false_rd|lv:false_mr|lv:true_hg|lv:true'
   const mapClassName = `${className} ${_.map}`
 
   return <LeafletMap className={mapClassName} {...mapProps} {...forwardedProps}>

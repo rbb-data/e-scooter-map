@@ -1,18 +1,16 @@
 import { useState, useEffect, useRef } from 'react'
 
-export default function useAutoStepper (handler, timeout) {
+export default function useAutoStepper (handler, dependencies, timeout) {
   const [isAnimating, setIsAnimating] = useState(false)
   const prevIsAnimatingState = useRef(false)
   const timeoutId = useRef(null)
 
   useEffect(() => {
+    clearTimeout(timeoutId.current)
     const _prevIsAnimatingState = prevIsAnimatingState.current
     prevIsAnimatingState.current = isAnimating
 
-    if (!isAnimating) {
-      clearTimeout(timeoutId.current)
-      return
-    }
+    if (!isAnimating) return
 
     // if animation was just started go to next step immediatly
     if (_prevIsAnimatingState === false) {
@@ -21,7 +19,7 @@ export default function useAutoStepper (handler, timeout) {
     }
 
     timeoutId.current = setTimeout(handler, timeout)
-  }, [isAnimating, handler])
+  }, [isAnimating, ...dependencies])
 
   return [isAnimating, setIsAnimating]
 }

@@ -31,7 +31,8 @@
 .filter
   background-color: $light-grey
 
-  & > label
+  & > label,
+  .labelWrapper label
     display: block
     color: $dark-grey
     font-size: 12px
@@ -43,3 +44,8 @@
 
     strong
       color: $red
+
+.labelWrapper
+  margin-top: 5px
+  display: flex
+  justify-content: space-between
