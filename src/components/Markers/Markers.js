@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import L from 'leaflet'
+import { useLeaflet } from 'react-leaflet'
 import CircleMarker from '../CircleMarker/CircleMarker'
 import { featureToLatLng } from '../../shared/lib/geoJsonCompat'
 import { red, bordeaux } from '../../shared/styles/colors.sass'
@@ -54,43 +55,53 @@ function createClusterIcon (cluster) {
 
 export default function Markers (props) {
   const { markers } = props
+  const leaflet = useLeaflet()
+  const [zoom, setZoom] = useState(leaflet.map.getZoom())
 
-  // return markers.map(marker =>
-  //   <CircleMarker
-  //     key={marker.properties.id}
-  //     center={featureToLatLng(marker)}
-  //     radius={1}
-  //     // interactive={false}
-  //     stroke={false}
-  //     fillColor={bordeaux}
-  //     color={bordeaux}
-  //     weight={1}
-  //     opacity={0.3}
-  //     fillOpacity={0.5}
-  //     onClick={() => { console.log(marker) }}
-  //   />
-  // )
+  useEffect(() => {
+    const zoomHandler = leaflet.map.on('zoom', () => {
+      setZoom(leaflet.map.getZoom())
+    })
 
-  return <MarkerClusterGroup
-    chunkedLoading
-    maxClusterRadius={10}
-    zoomToBoundsOnClick={false}
-    showCoverageOnHover={false}
-    spiderfyOnMaxZoom={false}
-    disableClusteringAtZoom={16}
-    iconCreateFunction={createClusterIcon}>
-    {markers.map(marker =>
-      <CircleMarker
-        key={marker.properties.id}
-        center={featureToLatLng(marker)}
-        radius={1}
-        interactive={false}
-        stroke={false}
-        fillColor={bordeaux}
-        fillOpacity={1}
-      />
-    )}
-  </MarkerClusterGroup>
+    return () => { leaflet.map.off('zoom', zoomHandler) }
+  }, leaflet)
+
+  return markers.map(marker =>
+    <CircleMarker
+      key={marker.properties.id}
+      center={featureToLatLng(marker)}
+      radius={zoom / 9}
+      // interactive={false}
+      stroke={false}
+      fillColor={bordeaux}
+      // color={bordeaux}
+      // weight={1}
+      // opacity={0.3}
+      fillOpacity={0.5}
+      onClick={() => { console.log(marker) }}
+    />
+  )
+
+  // return <MarkerClusterGroup
+  //   chunkedLoading
+  //   maxClusterRadius={10}
+  //   zoomToBoundsOnClick={false}
+  //   showCoverageOnHover={false}
+  //   spiderfyOnMaxZoom={false}
+  //   disableClusteringAtZoom={16}
+  //   iconCreateFunction={createClusterIcon}>
+  //   {markers.map(marker =>
+  //     <CircleMarker
+  //       key={marker.properties.id}
+  //       center={featureToLatLng(marker)}
+  //       radius={1}
+  //       interactive={false}
+  //       stroke={false}
+  //       fillColor={bordeaux}
+  //       fillOpacity={1}
+  //     />
+  //   )}
+  // </MarkerClusterGroup>
 }
 
 Markers.propTypes = {
