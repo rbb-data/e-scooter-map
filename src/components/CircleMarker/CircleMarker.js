@@ -22,6 +22,9 @@ class CircleMarker extends Path {
     if (toProps.radius !== fromProps.radius) {
       this.leafletElement.setRadius(toProps.radius)
     }
+    if (toProps.stroke !== fromProps.stroke) {
+      this.leafletElement.setStyle({ stroke: toProps.stroke })
+    }
   }
 }
 
