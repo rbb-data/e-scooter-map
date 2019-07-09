@@ -5,6 +5,8 @@ import { Map as LeafletMap, ZoomControl, GeoJSON } from 'react-leaflet'
 import { BingLayer } from 'react-leaflet-bing'
 
 import berlinMask from '../../data/berlin.geo.json'
+import berlinBoroughs from '../../data/berlin-bezirke.geo.json'
+import { darkGrey } from '../../styles/colors.sass'
 import _ from './Map.module.sass'
 
 // TODO:
@@ -58,16 +60,17 @@ const Map = props => {
   }
 
   const mapStyle = 'trs|lv:true;fc:EAEAEA_pp|lv:false;v:false_ar|v:false;lv:false_vg|v:true;fc:E4E4E4_wt|fc:AED1E4_rd|sc:d0d0d0;fc:e9e9e9;lv:false_mr|sc:d3d3d3;fc:dddddd;lv:true_hg|sc:d3d3d3;fc:e9e9e9;lv:true_g|lc:EAEAEA'
-  const darkStyle = 'trs|lv:true_pp|lv:false;v:false_ar|v:false;lv:false_vg|v:true_wt|lv:false_rd|lv:false_mr|lv:true_hg|lv:true'
+  const darkStyle = 'trs|lv:true_pp|lv:false;v:false_ar|v:false;lv:false_vg|v:true_wt|lv:false_wt|fc:0B2539_rd|lv:false_mr|lv:true_hg|lv:false'
+  const beigeStyle = 'trs|lv:true;fc:dfded2_pp|lv:false;v:false_ar|v:false;lv:false_vg|v:true_wt|lv:false;fc:86c6ed_rd|fc:ECEADD;sc:D4CDB9;lv:false_mr|fc:ECEADD;lv:true_hg|lv:false_g|lc:dfded2'
   const mapClassName = `${className} ${_.map}`
 
   return <LeafletMap className={mapClassName} {...mapProps} {...forwardedProps}>
     <BingLayer
-      type='CanvasDark'
+      type='CanvasGray'
       bingkey={bingKey}
       culture='de-de'
       // eslint-disable-next-line react/style-prop-object
-      style={darkStyle} />
+      style={beigeStyle} />
 
     <GeoJSON
       data={berlinMask}
@@ -75,6 +78,14 @@ const Map = props => {
       fillOpacity={0.8}
       color='white'
       stroke={false} />
+
+    <GeoJSON
+      data={berlinBoroughs}
+      interactive={false}
+      opacity={1}
+      weight={0.3}
+      fillOpacity={0}
+      color={darkGrey} />
 
     {/* <Rectangle bounds={mapProps.bounds} /> */}
 

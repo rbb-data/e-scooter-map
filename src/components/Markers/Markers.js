@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import { useLeaflet } from 'react-leaflet'
 import CircleMarker from '../CircleMarker/CircleMarker'
 import { featureToLatLng } from '../../shared/lib/geoJsonCompat'
-// import { red, bordeaux } from '../../shared/styles/colors.sass'
+import { bordeaux } from '../../shared/styles/colors.sass'
 // import MarkerClusterGroup from '../MarkerClusterGroup/MarkerClusterGroup'
 // import _ from './Markers.module.sass'
 
@@ -70,10 +70,10 @@ export default function Markers (props) {
     <CircleMarker
       key={marker.properties.id}
       center={featureToLatLng(marker)}
-      radius={zoom * zoom / 100}
+      radius={zoom * zoom * zoom / 1000}
       interactive={false}
       stroke={false}
-      fillColor={'#f03ca0'}
+      fillColor={'#1e5a3a'}
       color={'white'}
       weight={1}
       opacity={0.3}
