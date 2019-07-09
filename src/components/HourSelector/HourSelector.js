@@ -7,7 +7,7 @@ import stopIcon from './stopIcon.svg'
 import _ from './HourSelector.module.sass'
 
 export default function HourSelector (props) {
-  const { selectedHour, histogramData, onChange } = props
+  const { selectedHour, histogramData, histogramMax, onChange } = props
   const [isFirstPlay, setIsFirstPlay] = useState(true)
   const [isAnimating, setIsAnimating] = useAutoStepper(() => {
     const next = isFirstPlay ? 0 : (selectedHour + 1) % 24
@@ -27,6 +27,7 @@ export default function HourSelector (props) {
     </button>
     <Histogram
       values={histogramData}
+      max={histogramMax}
       highlight={selectedHour}
       onClick={hour => {
         onChange(hour)
@@ -38,5 +39,6 @@ export default function HourSelector (props) {
 HourSelector.propTypes = {
   selectedHour: PropTypes.number,
   onChange: PropTypes.func,
-  histogramData: PropTypes.array
+  histogramData: PropTypes.array,
+  histogramMax: PropTypes.number
 }

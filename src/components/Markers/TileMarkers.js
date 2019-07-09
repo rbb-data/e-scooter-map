@@ -18,12 +18,12 @@ export default function TileMarkers (props) {
       sliced: (properties, zoom) => ({
         fillColor: red,
         color: red,
-        fillOpacity: 0.1,
+        fillOpacity: 0.3,
         opacity: 0.3,
         radius: zoom > 12 ? 2 : 1,
-        weight: 1,
+        weight: 0.5,
         fill: true,
-        stroke: zoom > 10.5
+        stroke: zoom > 10
       })
     }} />
 }

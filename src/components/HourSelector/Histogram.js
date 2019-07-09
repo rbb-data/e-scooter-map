@@ -4,16 +4,15 @@ import { darkGrey, red } from '../../shared/styles/colors.sass'
 import _ from './Histogram.module.sass'
 
 export default function Histogram (props) {
-  const { values, highlight, onClick } = props
+  const { values, max, highlight, onClick } = props
 
-  const max = values.reduce((prev, next) => next > prev ? next : prev, 0)
   const normalizedValues = values.map(val => val / max)
 
-  const margin = 0.1
+  const margin = 0.22
 
   return <svg
     className={_.svg}
-    viewBox={`0 0 ${values.length} 2`}
+    viewBox={`0 0 ${values.length} 3.5`}
     width='100%'
     xmlns='http://www.w3.org/2000/svg'>
     {normalizedValues.map((val, i) =>
@@ -21,18 +20,12 @@ export default function Histogram (props) {
         <rect
           className={_.rect}
           x={i + margin}
-          y={1 - val}
+          y={2.5 - val * 2.5}
           width={1 - 2 * margin}
-          height={val}
+          height={val * 2.5}
           fill={i === highlight ? red : darkGrey} />
-        {/* <circle
-          className={_.rect}
-          r={0.4 - 2 * margin}
-          cx={i + 0.5}
-          cy='1.5'
-          fill={i === highlight ? red : darkGrey} /> */}
         { i % 2 === 0 &&
-          <text className={_.text} x={i + 0.5} y='2' textAnchor='middle' fill={i === highlight ? red : darkGrey}>{i}</text>
+          <text className={_.text} x={i + 0.5} y='3.5' textAnchor='middle' fill={i === highlight ? red : darkGrey}>{i}</text>
         }
       </g>
     )}
@@ -42,5 +35,6 @@ export default function Histogram (props) {
 Histogram.propTypes = {
   onClick: PropTypes.func,
   values: PropTypes.array,
+  max: PropTypes.number,
   highlight: PropTypes.number
 }

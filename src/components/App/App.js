@@ -57,8 +57,8 @@ function App (props) {
         className={_.map}>
 
         {/* <Markers markers={filteredByHour} /> */}
-        {/* <TileMarkers features={filteredByHour} /> */}
-        <ClusteredMarkers markers={filteredByHour} />
+        <TileMarkers features={filteredByHour} />
+        {/* <ClusteredMarkers markers={filteredByHour} /> */}
 
       </Map>
     </div>
@@ -67,7 +67,11 @@ function App (props) {
         <label className={_.timeLabel}>Fr. 05.06.2019 <strong>{hour}:00 Uhr</strong></label>
         <label className={_.countLabel}>{numberOfScootersByHour[hour] || 0} Roller</label>
       </div>
-      <HourSelector selectedHour={hour} onChange={setHour} histogramData={numberOfScootersByHour} />
+      <HourSelector
+        selectedHour={hour}
+        onChange={setHour}
+        histogramData={numberOfScootersByHour}
+        histogramMax={2833} />
     </div>
   </div>
 }
