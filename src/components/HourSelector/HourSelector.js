@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import Histogram from './Histogram'
 import useAutoStepper from './useAutoStepper'
@@ -8,13 +8,18 @@ import _ from './HourSelector.module.sass'
 
 export default function HourSelector (props) {
   const { selectedHour, histogramData, onChange } = props
+  const [isFirstPlay, setIsFirstPlay] = useState(true)
   const [isAnimating, setIsAnimating] = useAutoStepper(() => {
-    const next = (selectedHour + 1) % 24
+    const next = isFirstPlay ? 0 : (selectedHour + 1) % 24
     onChange(next)
-  }, [selectedHour, onChange], 500)
+    if (next === 23) setIsAnimating(false)
+    if (isFirstPlay) setIsFirstPlay(false)
+  }, [selectedHour, onChange, isFirstPlay], 2000)
 
   return <div className={_.wrapper}>
-    <button className={_.button} onClick={() => { setIsAnimating(!isAnimating) }}>
+    <button className={_.button} onClick={() => {
+      setIsAnimating(!isAnimating)
+    }}>
       {isAnimating
         ? <img src={stopIcon} alt='stop' />
         : <img src={playIcon} alt='play' />

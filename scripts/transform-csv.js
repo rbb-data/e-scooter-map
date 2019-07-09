@@ -21,8 +21,8 @@ Papa.parse(content, {
         geometry: {
           type: 'Point',
           coordinates: [
-            parseFloat(entry.lng.replace(',', '.')),
-            parseFloat(entry.lat.replace(',', '.'))
+            parseFloat(entry.lng),
+            parseFloat(entry.lat)
           ]
         }
       }

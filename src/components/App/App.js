@@ -5,7 +5,9 @@ import 'whatwg-fetch'
 import Map from '../../shared/components/Map/Map'
 import TabBar from '../../shared/components/TabBar/TabBar'
 import HourSelector from '../HourSelector/HourSelector'
+import TileMarkers from '../Markers/TileMarkers'
 import Markers from '../Markers/Markers'
+import ClusteredMarkers from '../Markers/ClusteredMarkers'
 import _ from './App.module.sass'
 
 const filterOptions = ['Alle', 'circ', 'lime', 'tier', 'voi']
@@ -38,6 +40,8 @@ function App (props) {
     return array
   }, [])
 
+  if (markers.length === 0) return null
+
   return <div className={_.app}>
     <div className={_.filter}>
       <label htmlFor='vendorSelector'>Anbieter:</label>
@@ -52,7 +56,10 @@ function App (props) {
         bingKey={process.env.REACT_APP_BING_KEY}
         className={_.map}>
 
-        <Markers markers={filteredByHour} />
+        {/* <Markers markers={filteredByHour} /> */}
+        {/* <TileMarkers features={filteredByHour} /> */}
+        <ClusteredMarkers markers={filteredByHour} />
+
       </Map>
     </div>
     <div className={_.filter}>

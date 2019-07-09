@@ -38,7 +38,7 @@ const Map = props => {
   }
 
   const mapProps = {
-    animate: true,
+    animate: false,
     // this is false because ios jumps towards elemts that can have focus when you touch
     // them which makes the page jump
     keyboard: false,
