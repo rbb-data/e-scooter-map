@@ -22,6 +22,11 @@ const Map = props => {
   function handleZoom (e) {
     const map = e.target
     map.dragging.enable()
+    window.callAnalytics('pi', 'rbb-data-e-scooter', `zoom map`)
+  }
+
+  function handleDragEnd (e) {
+    window.callAnalytics('pi', 'rbb-data-e-scooter', `move map`)
   }
 
   // props used for initial map rendering
@@ -48,6 +53,7 @@ const Map = props => {
     scrollWheelZoom: false,
     dragging: false,
     onZoom: handleZoom,
+    onDragEnd: handleDragEnd,
     zoomSnap: false,
     bounds: [
       [berlin.bounds.bottomright.lat, berlin.bounds.bottomright.lng],
