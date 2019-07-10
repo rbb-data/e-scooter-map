@@ -52,7 +52,10 @@ function App (props) {
         title='Anbieter auswählen'
         selectedTab={vendorFilter}
         tabs={filterOptions}
-        onSelect={setVendorFilter} />
+        onSelect={vendor => {
+          setVendorFilter(vendor)
+          window.callAnalytics('pi', 'rbb-data-e-scooter', `select vendor: ${vendor}`)
+        }} />
     </div>
     <div className={_.mapWrapper}>
       <Map
