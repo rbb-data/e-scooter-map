@@ -48,7 +48,7 @@ const Map = props => {
     // them which makes the page jump
     keyboard: false,
     minZoom: 9,
-    maxZoom: 16,
+    maxZoom: 17,
     zoomControl: false,
     scrollWheelZoom: false,
     dragging: false,
