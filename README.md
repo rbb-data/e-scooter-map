@@ -1,5 +1,6 @@
 # e schooter heatmap
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is forked from [rbb starter](https://github.com/rbb-data/starter)  
+which was bootstrapped from [Create React App](https://github.com/facebook/create-react-app).
 
 ## Folder structure
 
@@ -7,6 +8,11 @@ Your app lives in `/src`.
 Reusable modules should eventually be moved to `src/shared` and be pushed back to Github. :)
 
 (create react app forces all code to live under `src`)
+
+## update data
+
+The geojson with the scooter positions is generared from `data/e_scooters_frontend.csv` run  
+`node scripts/transform-csv.js` if the data did change.
 
 ## Bing Keys
 
