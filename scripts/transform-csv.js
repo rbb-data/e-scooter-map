@@ -14,15 +14,15 @@ Papa.parse(content, {
       return {
         type: 'Feature',
         properties: {
-          id: i,
-          hour: +entry.hour_of_day,
-          vendor: entry.provider
+          // id: i,
+          h: +entry.hour_of_day,
+          v: entry.provider
         },
         geometry: {
           type: 'Point',
           coordinates: [
-            parseFloat(entry.lng),
-            parseFloat(entry.lat)
+            parseFloat(entry.lng).toFixed(4),
+            parseFloat(entry.lat).toFixed(4)
           ]
         }
       }

@@ -1,6 +1,6 @@
 /* global fetch */
 
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useMemo } from 'react'
 import 'whatwg-fetch'
 import Map from '../../shared/components/Map/Map'
 import TabBar from '../../shared/components/TabBar/TabBar'
@@ -30,15 +30,18 @@ function App (props) {
   //  if the array is empty it runs only once otherwise it runs when depencies change
 
   const filteredByVendor = markers.filter(marker =>
-    vendorFilter === 'Alle' || marker.properties.vendor === vendorFilter)
-  const filteredByHour = filteredByVendor.filter(marker => marker.properties.hour === hour)
+    vendorFilter === 'Alle' || marker.properties.v === vendorFilter)
+  const filteredByHour = filteredByVendor.filter(marker => marker.properties.h === hour)
 
-  // TODO maybe cache this
-  const numberOfScootersByHour = filteredByVendor.reduce((array, marker) => {
-    const hour = marker.properties.hour
-    array[hour] = (array[hour] || 0) + 1
-    return array
-  }, [])
+  const numberOfScootersByHour = useMemo(() =>
+    filteredByVendor.reduce((array, marker) => {
+      const hour = marker.properties.h
+      array[hour] = (array[hour] || 0) + 1
+      return array
+    }, [])
+  , [filteredByVendor.length])
+  //  ⬆️ the histogram is only regenerated when the number of scooter change
+  //  of course we could have two vendors with the same number of scooters but we don't
 
   if (markers.length === 0) return null
 
