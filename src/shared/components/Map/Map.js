@@ -5,7 +5,7 @@ import { Map as LeafletMap, ZoomControl, GeoJSON } from 'react-leaflet'
 import { BingLayer } from 'react-leaflet-bing'
 
 import berlinMask from '../../data/berlin.geo.json'
-import berlinBoroughs from '../../data/berlin-bezirke.json'
+import berlinBoroughs from '../../data/berlin-bezirke.geo.json'
 import { darkGrey } from '../../styles/colors.sass'
 import _ from './Map.module.sass'
 
