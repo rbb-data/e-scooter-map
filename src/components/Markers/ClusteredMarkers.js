@@ -2,10 +2,8 @@ import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import L from 'leaflet'
 import Chroma from 'chroma-js'
-import { useLeaflet } from 'react-leaflet'
-import CircleMarker from '../CircleMarker/CircleMarker'
 import { featureToLatLng } from '../../shared/lib/geoJsonCompat'
-import { red, bordeaux } from '../../shared/styles/colors.sass'
+import { red } from '../../shared/styles/colors.sass'
 import GeoJsonCluster from '../MarkerClusterGroup/GeoJsonCluster'
 import _ from './Markers.module.sass'
 
@@ -33,24 +31,11 @@ function createClusterIcon (cluster) {
         fill-opacity="${1}"
         stroke-width="0" />
         <text x="50" y="50" text-anchor="middle" dx="-0.03em" dy=".38em" class="${_.circleText}">
-          ${size > 30 ? childCount : ''}
+          ${size > 40 ? childCount : ''}
         </text>
     </svg>`,
   iconSize: [20, 20],
   className: _.divIcon
-  })
-}
-
-function pointToLayer (geoJsonPoint, latlng, zoom) {
-  return L.circleMarker(latlng, {
-    radius: zoom > 12 ? 2 : 1,
-    stroke: zoom > 10.5,
-    interactive: false,
-    weight: 1,
-    color: red,
-    opacity: 0.1,
-    fillColor: red,
-    fillOpacity: 0.3
   })
 }
 
