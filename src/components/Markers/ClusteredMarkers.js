@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import L from 'leaflet'
 import Chroma from 'chroma-js'
 import { featureToLatLng } from '../../shared/lib/geoJsonCompat'
 import { red } from '../../shared/styles/colors.sass'
 import GeoJsonCluster from '../MarkerClusterGroup/GeoJsonCluster'
-import _ from './Markers.module.sass'
+import _ from './ClusteredMarkers.module.sass'
 
 const scale = Chroma.scale([red, 'black']).domain([2, 150])
 
