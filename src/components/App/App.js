@@ -57,8 +57,8 @@ function App (props) {
         className={_.map}>
 
         {/* <Markers markers={filteredByHour} /> */}
-        <TileMarkers features={filteredByHour} />
-        {/* <ClusteredMarkers markers={filteredByHour} /> */}
+        {/* <TileMarkers features={filteredByHour} /> */}
+        <ClusteredMarkers markers={filteredByHour} />
 
       </Map>
     </div>

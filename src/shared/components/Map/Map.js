@@ -28,7 +28,7 @@ const Map = props => {
   const berlin = {
     center: { lat: 52.5244, lng: 13.4105 },
     bounds: {
-      topleft: { lat: 52.57, lng: 13.27 },
+      topleft: { lat: 52.55, lng: 13.27 },
       bottomright: { lat: 52.468, lng: 13.53 }
     },
     maxBounds: {
