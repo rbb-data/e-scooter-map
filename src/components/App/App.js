@@ -64,7 +64,7 @@ function App (props) {
     </div>
     <div className={_.filter}>
       <div className={_.labelWrapper}>
-        <label className={_.timeLabel}>Fr. 05.06.2019 <strong>{hour}:00 Uhr</strong></label>
+        <label className={_.timeLabel}>Fr. 05.07.2019 <strong>{hour}:00 Uhr</strong></label>
         <label className={_.countLabel}>{numberOfScootersByHour[hour] || 0} Roller</label>
       </div>
       <HourSelector
