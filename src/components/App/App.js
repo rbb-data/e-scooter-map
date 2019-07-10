@@ -55,7 +55,10 @@ function App (props) {
         format={name => name.charAt(0).toUpperCase() + name.slice(1)}
         onSelect={vendor => {
           setVendorFilter(vendor)
-          window.callAnalytics('pi', 'rbb-data-e-scooter', `select vendor: ${vendor}`)
+
+          if (typeof window.callAnalytics === 'function') {
+            window.callAnalytics('pi', 'rbb-data-e-scooter', `select vendor: ${vendor}`)
+          }
         }} />
     </div>
     <div className={_.mapWrapper}>

@@ -22,11 +22,15 @@ const Map = props => {
   function handleZoom (e) {
     const map = e.target
     map.dragging.enable()
-    window.callAnalytics('pi', 'rbb-data-e-scooter', `zoom map`)
+    if (typeof window.callAnalytics === 'function') {
+      window.callAnalytics('pi', 'rbb-data-e-scooter', `zoom map`)
+    }
   }
 
   function handleDragEnd (e) {
-    window.callAnalytics('pi', 'rbb-data-e-scooter', `move map`)
+    if (typeof window.callAnalytics === 'function') {
+      window.callAnalytics('pi', 'rbb-data-e-scooter', `move map`)
+    }
   }
 
   // props used for initial map rendering

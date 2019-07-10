@@ -19,7 +19,9 @@ export default function HourSelector (props) {
   return <div className={_.wrapper}>
     <button className={_.button} onClick={() => {
       setIsAnimating(!isAnimating)
-      window.callAnalytics('pi', 'rbb-data-e-scooter', isAnimating ? 'stop animation' : 'start animation')
+      if (typeof window.callAnalytics === 'function') {
+        window.callAnalytics('pi', 'rbb-data-e-scooter', isAnimating ? 'stop animation' : 'start animation')
+      }
     }}>
       {isAnimating
         ? <img src={stopIcon} alt='stop' />
