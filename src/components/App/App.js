@@ -52,6 +52,7 @@ function App (props) {
         title='Anbieter auswählen'
         selectedTab={vendorFilter}
         tabs={filterOptions}
+        format={name => name.charAt(0).toUpperCase() + name.slice(1)}
         onSelect={vendor => {
           setVendorFilter(vendor)
           window.callAnalytics('pi', 'rbb-data-e-scooter', `select vendor: ${vendor}`)
@@ -78,6 +79,9 @@ function App (props) {
         onChange={setHour}
         histogramData={numberOfScootersByHour}
         histogramMax={2833} />
+      <label className={_.histogramLabel}>
+        Die Höhe der Balken zeigt die Anzahl der Roller zur jeweiligen Stunde.
+      </label>
     </div>
   </div>
 }
