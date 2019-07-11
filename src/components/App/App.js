@@ -4,6 +4,7 @@ import React, { useState, useEffect, useMemo } from 'react'
 import 'whatwg-fetch'
 import Map from '../../shared/components/Map/Map'
 import TabBar from '../../shared/components/TabBar/TabBar'
+import track from '../../lib/tracking'
 import HourSelector from '../HourSelector/HourSelector'
 // import TileMarkers from '../Markers/TileMarkers'
 // import Markers from '../Markers/Markers'
@@ -56,9 +57,7 @@ function App (props) {
         onSelect={vendor => {
           setVendorFilter(vendor)
 
-          if (typeof window.callAnalytics === 'function') {
-            window.callAnalytics('pi', 'rbb-data-e-scooter', `select vendor: ${vendor}`)
-          }
+          track(`select vendor: ${vendor}`)
         }} />
     </div>
     <div className={_.mapWrapper}>

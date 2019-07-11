@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import track from '../../lib/tracking'
 import PropTypes from 'prop-types'
 import Histogram from './Histogram'
 import useAutoStepper from './useAutoStepper'
@@ -19,9 +20,7 @@ export default function HourSelector (props) {
   return <div className={_.wrapper}>
     <button className={_.button} onClick={() => {
       setIsAnimating(!isAnimating)
-      if (typeof window.callAnalytics === 'function') {
-        window.callAnalytics('pi', 'rbb-data-e-scooter', isAnimating ? 'stop animation' : 'start animation')
-      }
+      track(isAnimating ? 'stop animation' : 'start animation')
     }}>
       {isAnimating
         ? <img src={stopIcon} alt='stop' />
@@ -36,7 +35,7 @@ export default function HourSelector (props) {
         onChange(hour)
         setIsAnimating(false)
 
-        window.callAnalytics('pi', 'rbb-data-e-scooter', 'select hour')
+        track('select hour')
       }} />
   </div>
 }
