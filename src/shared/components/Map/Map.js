@@ -23,7 +23,7 @@ const Map = props => {
   function handleZoom (e) {
     const map = e.target
     map.dragging.enable()
-    map.tap.enable()
+    if (map.tap) map.tap.enable()
     track(`zoom map`)
   }
 
