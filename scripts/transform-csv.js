@@ -9,14 +9,19 @@ Papa.parse(content, {
   complete: function (results) {
     let features = results.data.map((entry, i) => {
       // change format if there's a different local place name
-      // const vehicleId = entry.vehicle_id
+			// const vehicleId = entry.vehicle_id
+			
+			function parseDate(str) {
+				var m = str.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
+				return (m) ? new Date(m[3], m[2]-1, m[1], 12) : null;
+			}
 
       return {
         type: 'Feature',
         properties: {
-          // id: i,
-          h: +entry.hour_of_day,
-          v: entry.provider
+          id: entry.id,
+          date: parseDate(entry.date),
+          type: entry.category
         },
         geometry: {
           type: 'Point',
