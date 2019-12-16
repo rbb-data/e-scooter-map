@@ -9,16 +9,24 @@ export default function Histogram (props) {
 	console.log('props in histor', props)
 	
 	const values_only = Object.values(values)
+	const keys_only = Object.keys(values)
 
-	const normalizedValues = values_only.map(val => val / max)
-	
-	console.log('normalizedValues', normalizedValues)
+	const keys = keys_only.sort(function(a, b) {
+		return new Date(b) - new Date(a);
+	})
+	const sorted_keys = keys.reverse()
+
+	var sorted_values = []
+	sorted_keys.forEach(key => sorted_values.push(values[key]))
+	console.log('sorted_values', sorted_values)
+
+	const normalizedValues = sorted_values.map(val => val / max)
 
   const margin = 0.22
 
   return <svg
     className={_.svg}
-    viewBox={`0 0 ${values.length} 3.5`}
+    viewBox={`0 0 ${normalizedValues.length} 3.5`}
     width='100%'
     xmlns='http://www.w3.org/2000/svg'>
 		{normalizedValues.map((val, i) =>
@@ -29,9 +37,9 @@ export default function Histogram (props) {
           y={2.5 - val * 2.5}
           width={1 - 2 * margin}
           height={val * 2.5}
-          fill={i === highlight ? red : darkGrey} />
+          fill={sorted_keys[i] === highlight ? red : darkGrey} />
 				{ i % 2 === 0 &&
-					<text className={_.text} x={i + 0.5} y='3.5' textAnchor='middle' fill={i === highlight ? red : darkGrey}>{i}</text>
+					<text className={_.text} x={i + 0.5} y='3.5' textAnchor='middle' fill={sorted_keys[i] === highlight ? red : darkGrey}>{ new Date(sorted_keys[i]).getDate() }</text>
 				}
       </g>
     )}
