@@ -8,14 +8,26 @@ import stopIcon from './stopIcon.svg'
 import _ from './HourSelector.module.sass'
 
 export default function HourSelector (props) {
+	console.log('props', props)
   const { selectedHour, histogramData, histogramMax, onChange } = props
   const [isFirstPlay, setIsFirstPlay] = useState(true)
   const [isAnimating, setIsAnimating] = useAutoStepper(() => {
-    const next = isFirstPlay ? 0 : (selectedHour + 1) % 24
+		console.log('selectedHour', selectedHour)
+		console.log('isFirstPlay', isFirstPlay)
+
+		function addDays(date, days) {
+			let result = new Date(date)
+			result.setDate(result.getDate() + days)
+			console.log('result.toISOString()', result.toISOString())
+			return result.toISOString()
+		}
+
+    const next = isFirstPlay ? selectedHour : (addDays(selectedHour, 1))
     onChange(next)
-    if (next === 23) setIsAnimating(false)
+    if (next === '2020-01-09T11:00:00.000Z') setIsAnimating(false)
     if (isFirstPlay) setIsFirstPlay(false)
   }, [selectedHour, onChange, isFirstPlay], 2000)
+
 
   return <div className={_.wrapper}>
     <button className={_.button} onClick={() => {
