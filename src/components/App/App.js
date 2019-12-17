@@ -7,7 +7,7 @@ import TabBar from '../../shared/components/TabBar/TabBar'
 import track from '../../lib/tracking'
 import HourSelector from '../HourSelector/HourSelector'
 // import TileMarkers from '../Markers/TileMarkers'
-// import Markers from '../Markers/Markers'
+import Markers from '../Markers/Markers'
 import ClusteredMarkers from '../Markers/ClusteredMarkers'
 import _ from './App.module.sass'
 
@@ -33,14 +33,21 @@ function App (props) {
   const filteredByVendor = markers.filter(marker =>
 		vendorFilter === 'Alle' || marker.properties.type === vendorFilter)
 		
-  // const filteredByHour = filteredByVendor.filter(marker => marker.properties.date === hour)
-  const filteredByHour = filteredByVendor.filter(marker => marker)
+	console.log('HOUR', typeof hour)
+
+  const filteredByHour = filteredByVendor.filter(marker => {
+		return marker.properties.date === hour
+	})
+  // const filteredByHour = filteredByVendor.filter(marker => marker)
 
 	
   const numberOfScootersByHour = useMemo(() =>
     filteredByVendor.reduce((array, marker) => {
-      const hour = marker.properties.date
-      array[hour] = (array[hour] || 0) + 1
+			const hour = marker.properties.date
+			array[hour] = (array[hour] || 0) + 1
+			// array[hour] = new Date(new Date(array[hour] || '2019-12-09T11:00:00.000Z').setDate(
+			// 	new Date(array[hour] || '2019-12-09T11:00:00.000Z').getDate() + 1
+			// )).toISOString()
       return array
     }, [])
   , [filteredByVendor.length])
@@ -70,9 +77,9 @@ function App (props) {
         bingKey={process.env.REACT_APP_BING_KEY}
         className={_.map}>
 
-        {/* <Markers markers={filteredByHour} /> */}
+        <Markers markers={filteredByHour} />
         {/* <TileMarkers features={filteredByHour} /> */}
-        <ClusteredMarkers markers={filteredByHour} />
+        {/* <ClusteredMarkers markers={filteredByHour} /> */}
 
       </Map>
     </div>

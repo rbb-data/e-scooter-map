@@ -6,7 +6,7 @@ import _ from './Histogram.module.sass'
 export default function Histogram (props) {
 	const { values, max, highlight, onClick } = props
 
-	console.log('props in histor', props)
+	console.log('props in histogram', props)
 	
 	const values_only = Object.values(values)
 	const keys_only = Object.keys(values)
@@ -22,7 +22,9 @@ export default function Histogram (props) {
 
 	const normalizedValues = sorted_values.map(val => val / max)
 
-  const margin = 0.22
+	const margin = 0.22
+	
+	console.log('VALUES', values)
 
   return <svg
     className={_.svg}
@@ -30,7 +32,7 @@ export default function Histogram (props) {
     width='100%'
     xmlns='http://www.w3.org/2000/svg'>
 		{normalizedValues.map((val, i) =>
-      <g key={i} onClick={() => onClick(i)}>
+      <g key={i} onClick={() => onClick(sorted_keys[i])}>
         <rect
           className={_.rect}
           x={i + margin}

@@ -12,20 +12,30 @@ export default function HourSelector (props) {
   const { selectedHour, histogramData, histogramMax, onChange } = props
   const [isFirstPlay, setIsFirstPlay] = useState(true)
   const [isAnimating, setIsAnimating] = useAutoStepper(() => {
-		console.log('selectedHour', selectedHour)
-		console.log('isFirstPlay', isFirstPlay)
+		console.log('histogramData', histogramData)
+
+		const minDate = '2019-12-09T11:00:00.000Z'
+		const maxDate = '2020-01-09T11:00:00.000Z'
 
 		function addDays(date, days) {
+			if (date === '2020-01-09T11:00:00.000Z' || date === '2020-01-10T11:00:00.000Z' ) {
+				return minDate
+			}
 			let result = new Date(date)
 			result.setDate(result.getDate() + days)
 			console.log('result.toISOString()', result.toISOString())
 			return result.toISOString()
 		}
 
-    const next = isFirstPlay ? selectedHour : (addDays(selectedHour, 1))
+    let next = isFirstPlay ? selectedHour : (addDays(selectedHour, 1))
     onChange(next)
-    if (next === '2020-01-09T11:00:00.000Z') setIsAnimating(false)
-    if (isFirstPlay) setIsFirstPlay(false)
+    if (next === maxDate) {
+			setIsAnimating(false)
+			next = minDate
+			onChange(next)
+		}
+		if (isFirstPlay) setIsFirstPlay(false)
+
   }, [selectedHour, onChange, isFirstPlay], 2000)
 
 
