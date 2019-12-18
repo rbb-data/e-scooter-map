@@ -32,11 +32,14 @@
   background-color: $light-grey
 
   & > label,
-  .labelWrapper label
+  .labelWrapper label, .labelWrapperSource label
     display: block
     color: $dark-grey
     font-size: 12px
     margin: 5px 10px
+
+  .labelWrapperSource .sourceLabel
+    font-size: 12px
 
   .histogramLabel
     text-align: center
@@ -50,6 +53,22 @@
       color: $red
 
 .labelWrapper
+  margin-top: 5px
+  display: flex
+  justify-content: center
+	
+.sourceLink
+  color: #e31818
+  text-decoration: none
+
+.histogramLabel 
+	font-size: 12px
+
+.countLabel
+  font-size: 18px !important
+  font-weight: bold !important
+
+.labelWrapperSource
   margin-top: 5px
   display: flex
   justify-content: space-between
