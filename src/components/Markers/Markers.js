@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { useLeaflet } from 'react-leaflet'
 import CircleMarker from '../CircleMarker/CircleMarker'
 import { featureToLatLng } from '../../shared/lib/geoJsonCompat'
-import { gold, red } from '../../shared/styles/colors.sass'
+import { gold } from '../../shared/styles/colors.sass'
 
 export default function Markers (props) {
   const { markers } = props

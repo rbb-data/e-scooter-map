@@ -1,0 +1,107 @@
+id,date,address,category,lat,lng
+1,18/12/2019,"An der Schillingbrücke, 10243 Berlin-Friedrichshain",Konzerte,52.5094936,13.4273333
+2,18/12/2019,"Danziger Straße 101, 10405 Berlin-Prenzlauer Berg",Konzerte,52.53805398484686,13.430591344543418
+3,18/12/2019,"Gendarmenmarkt, 10117 Berlin-Mitte",Konzerte,52.5126292,13.3882664
+4,18/12/2019,"Kantstraße 12A, 10623 Berlin-Charlottenburg",Konzerte,52.50598,13.326396
+5,18/12/2019,"Pommernallee 2-4, 14052 Berlin-Charlottenburg",Konzerte,52.5089029,13.2686383
+6,18/12/2019,"Skalitzer Straße 71-72 (im U-Bhf. Schlesisches Tor), 10997 Berlin-Kreuzberg",Konzerte,52.5005536,13.4387657
+7,19/12/2019,"Ben-Gurion-Straße, 10785 Berlin-Tiergarten",Konzerte,52.5101172,13.3692445
+8,19/12/2019,"Gendarmenmarkt, 10117 Berlin-Mitte",Konzerte,52.5126292,13.3882664
+9,19/12/2019,"Kaiser-Friedrich-Straße 67, 10627 Berlin-Charlottenburg",Konzerte,52.50921162504978,13.302184314108299
+10,19/12/2019,"Rosa-Luxemburg-Platz, 10178 Berlin-Mitte",Konzerte,52.5266977,13.4091365
+11,19/12/2019,"Skalitzer Straße 71-72 (im U-Bhf. Schlesisches Tor), 10997 Berlin-Kreuzberg",Konzerte,52.5005536,13.4387657
+12,19/12/2019,"Skalitzer Straße 85, 10997 Berlin-Kreuzberg",Konzerte,52.50026505028856,13.435884434266452
+13,20/12/2019,"Am Flutgraben 2, 12435 Berlin-Treptow",Konzerte,52.496892246145435,13.451447987360266
+14,20/12/2019,"Am Juliusturm 64, 13599 Berlin-Spandau",Konzerte,52.54012395425392,13.212505341402174
+15,20/12/2019,"Französische Straße 33 D, 10117 Berlin-Mitte",Konzerte,52.5151632,13.3938105
+16,20/12/2019,"Gendarmenmarkt 5, 10117 Berlin-Mitte",Konzerte,52.514295363942026,13.392207432262207
+17,20/12/2019,"Knaackstraße 97, 10435 Berlin-Prenzlauer Berg",Konzerte,52.540326091828774,13.41414733268664
+18,20/12/2019,"Marheinekeplatz 2, 10961 Berlin-Kreuzberg",Konzerte,52.4892895,13.3947033
+19,20/12/2019,"Nikolaikirchplatz, 10178 Berlin-Mitte",Konzerte,52.5166892,13.4056898
+20,20/12/2019,"Oranienstraße 190, 10999 Berlin-Kreuzberg",Konzerte,52.500341020267065,13.422218831433575
+21,20/12/2019,"Viktoriastraße 10-18, 12105 Berlin-Tempelhof",Konzerte,52.4544783,13.379605
+22,21/12/2019,"Alt-Köpenick 31, 12555 Berlin-Köpenick",Konzerte,52.44514900188424,13.574384441504257
+23,21/12/2019,"Am Wriezener Bahnhof, 10243 Berlin-Friedrichshain",Konzerte,52.5110751,13.4392491
+24,21/12/2019,"Chausseestraße 102, 10115 Berlin-Mitte",Konzerte,52.532236078455675,13.380661643667642
+25,21/12/2019,"Hasenheide 107, 10967 Berlin-Neukölln",Konzerte,52.48684180091895,13.421471936668196
+26,21/12/2019,"Marheinekeplatz 2, 10961 Berlin-Kreuzberg",Konzerte,52.4892895,13.3947033
+27,21/12/2019,"Neuhelgoländer Weg, 12559 Berlin-Köpenick",Konzerte,52.4260191,13.6805542
+28,21/12/2019,"Viktoriastraße 10-18, 12105 Berlin-Tempelhof",Konzerte,52.4544783,13.379605
+29,21/12/2019,"Viktoriastraße 10, 12105 Berlin-Tempelhof",Konzerte,52.45477205177779,13.381050357056342
+30,22/12/2019,"Bismarckstraße 35, 10627 Berlin-Charlottenburg",Konzerte,52.51195154576653,13.308424129419413
+31,22/12/2019,"Chausseestraße 102, 10115 Berlin-Mitte",Konzerte,52.532236078455675,13.380661643667642
+32,22/12/2019,"Friedrichstraße 101, 10117 Berlin-Mitte",Konzerte,52.520704269356514,13.38844595387061
+33,22/12/2019,"Friedrichstraße 176-179, 10117 Berlin-Mitte",Konzerte,52.5133089,13.386796
+34,22/12/2019,"Mariannenplatz 28, 10997 Berlin-Kreuzberg",Konzerte,52.50522958192164,13.427380046525029
+35,22/12/2019,"Nikolaikirchplatz, 10178 Berlin-Mitte",Konzerte,52.5166892,13.4056898
+36,22/12/2019,"Palisadenstraße 48, 10243 Berlin-Friedrichshain",Konzerte,52.51824473738343,13.439931160937292
+37,22/12/2019,"Pommernallee 2-4, 14052 Berlin-Charlottenburg",Konzerte,52.5089029,13.2686383
+38,22/12/2019,"Schlossinsel 1, 12557 Berlin-Köpenick",Konzerte,52.4432765,13.5715638
+39,22/12/2019,"Tschaikowskistraße 1, 13156 Berlin-Pankow",Konzerte,52.57832347188946,13.40561374717766
+40,22/12/2019,"Tschaikowskistraße 1, 13156 Berlin-Pankow",Konzerte,52.57832347188946,13.40561374717766
+41,22/12/2019,"Viktoriastraße 10-18, 12105 Berlin-Tempelhof",Konzerte,52.4544783,13.379605
+42,23/12/2019,"Gendarmenmarkt, 10117 Berlin-Mitte",Konzerte,52.5126292,13.3882664
+43,23/12/2019,"Knaackstraße 97, 10435 Berlin-Prenzlauer Berg",Konzerte,52.540326091828774,13.41414733268664
+44,23/12/2019,"Pommernallee 2-4, 14052 Berlin-Charlottenburg",Konzerte,52.5089029,13.2686383
+45,23/12/2019,"Revaler Straße 99, 10245 Berlin-Friedrichshain",Konzerte,52.5081440560025,13.4518302227268
+46,23/12/2019,"Rosa-Luxemburg-Platz, 10178 Berlin-Mitte",Konzerte,52.5266977,13.4091365
+47,24/12/2019,"Am Juliusturm 55-59, 13599 Berlin-Reinickendorf",Konzerte,52.5375289,13.2119728
+48,24/12/2019,"Schaperstraße 24, 10719 Berlin-Wilmersdorf",Konzerte,52.49887445133727,13.32850067890669
+49,25/12/2019,"Am Kupfergraben, 10117 Berlin-Mitte",Konzerte,52.5208183,13.3925513
+50,25/12/2019,"Bölschestraße 27-30, 12587 Berlin-Köpenick",Konzerte,52.4502168,13.6227561
+51,25/12/2019,"Karl-Liebknecht-Straße 8, 10178 Berlin-Mitte",Konzerte,52.52054192474462,13.406670667090554
+52,25/12/2019,"Schaperstraße 24, 10719 Berlin-Wilmersdorf",Konzerte,52.49887445133727,13.32850067890669
+53,25/12/2019,"Schlossinsel 1, 12557 Berlin-Köpenick",Konzerte,52.4432765,13.5715638
+54,26/12/2019,"Am Kupfergraben, 10117 Berlin-Mitte",Konzerte,52.5208183,13.3925513
+55,26/12/2019,"Am Lustgarten, 10178 Berlin-Mitte",Konzerte,52.5191213,13.3979725
+56,26/12/2019,"Bölschestraße 27-30, 12587 Berlin-Köpenick",Konzerte,52.4502168,13.6227561
+57,26/12/2019,"Gendarmenmarkt 5, 10117 Berlin-Mitte",Konzerte,52.514295363942026,13.392207432262207
+58,26/12/2019,"Gendarmenmarkt, 10117 Berlin-Mitte",Konzerte,52.5126292,13.3882664
+59,26/12/2019,"Herbert-von-Karajan-Straße 1, 10785 Berlin-Tiergarten",Konzerte,52.51006817458727,13.36897321920824
+60,26/12/2019,"Karl-Liebknecht-Straße 8, 10178 Berlin-Mitte",Konzerte,52.52054192474462,13.406670667090554
+61,26/12/2019,"Marheinekeplatz 2, 10961 Berlin-Kreuzberg",Konzerte,52.4892895,13.3947033
+62,26/12/2019,"Oranienstraße 190, 10999 Berlin-Kreuzberg",Konzerte,52.500341020267065,13.422218831433575
+63,26/12/2019,"Schlossinsel 1, 12557 Berlin-Köpenick",Konzerte,52.4432765,13.5715638
+64,26/12/2019,"Wilhelmsaue 119, 10715 Berlin-Wilmersdorf",Konzerte,52.48497953557618,13.32435531837005
+65,27/12/2019,"Am Kupfergraben, 10117 Berlin-Mitte",Konzerte,52.5208183,13.3925513
+66,27/12/2019,"Nikolaikirchplatz, 10178 Berlin-Mitte",Konzerte,52.5166892,13.4056898
+67,27/12/2019,"Rosa-Luxemburg-Platz, 10178 Berlin-Mitte",Konzerte,52.5266977,13.4091365
+68,28/12/2019,"Am Kupfergraben, 10117 Berlin-Mitte",Konzerte,52.5208183,13.3925513
+69,28/12/2019,"Falckensteinstraße 48, 10997 Berlin-Kreuzberg",Konzerte,52.50084547592356,13.444923477319097
+70,28/12/2019,"Kantstraße 12A, 10623 Berlin-Charlottenburg",Konzerte,52.50598,13.326396
+71,28/12/2019,"Knaackstraße 97, 10435 Berlin-Prenzlauer Berg",Konzerte,52.540326091828774,13.41414733268664
+72,28/12/2019,"Kulmer Straße 20A, 10783 Berlin-Schöneberg",Konzerte,52.4919733,13.3624177
+73,28/12/2019,"Kulmer Straße 20A, 10783 Berlin-Schöneberg",Konzerte,52.4919733,13.3624177
+74,28/12/2019,"Mehringdamm 34, 10961 Berlin-Kreuzberg",Konzerte,52.49360824717965,13.387768229682473
+75,28/12/2019,"Rosa-Luxemburg-Platz, 10178 Berlin-Mitte",Konzerte,52.5266977,13.4091365
+76,28/12/2019,"Rosa-Luxemburg-Platz, 10178 Berlin-Mitte",Konzerte,52.5266977,13.4091365
+77,28/12/2019,"Schlossinsel 1, 12557 Berlin-Köpenick",Konzerte,52.4432765,13.5715638
+78,29/12/2019,"Am Kupfergraben, 10117 Berlin-Mitte",Konzerte,52.5208183,13.3925513
+79,29/12/2019,"Cuvrystraße 7, 10997 Berlin-Kreuzberg",Konzerte,52.49917433785956,13.445165990515113
+80,29/12/2019,"Gendarmenmarkt 5, 10117 Berlin-Mitte",Konzerte,52.514295363942026,13.392207432262207
+81,29/12/2019,"Gendarmenmarkt, 10117 Berlin-Mitte",Konzerte,52.5126292,13.3882664
+82,29/12/2019,"Knaackstraße 97, 10435 Berlin-Prenzlauer Berg",Konzerte,52.540326091828774,13.41414733268664
+83,29/12/2019,"Knaackstraße 97, 10435 Berlin-Prenzlauer Berg",Konzerte,52.540326091828774,13.41414733268664
+84,29/12/2019,"Rosa-Luxemburg-Platz, 10178 Berlin-Mitte",Konzerte,52.5266977,13.4091365
+85,29/12/2019,"Rosa-Luxemburg-Platz, 10178 Berlin-Mitte",Konzerte,52.5266977,13.4091365
+86,29/12/2019,"Schlossinsel 1, 12557 Berlin-Köpenick",Konzerte,52.4432765,13.5715638
+87,30/12/2019,"Cuvrystraße 7, 10997 Berlin-Kreuzberg",Konzerte,52.49917433785956,13.445165990515113
+88,30/12/2019,"Klixstraße 2, 10823 Berlin-Schöneberg",Konzerte,52.489169444053786,13.35092890637671
+89,30/12/2019,"Knaackstraße 97, 10435 Berlin-Prenzlauer Berg",Konzerte,52.540326091828774,13.41414733268664
+90,30/12/2019,"Oranienstraße 190, 10999 Berlin-Kreuzberg",Konzerte,52.500341020267065,13.422218831433575
+91,30/12/2019,"Rosa-Luxemburg-Platz, 10178 Berlin-Mitte",Konzerte,52.5266977,13.4091365
+92,31/12/2019,"Gendarmenmarkt, 10117 Berlin-Mitte",Konzerte,52.5126292,13.3882664
+93,31/12/2019,"Rosa-Luxemburg-Platz, 10178 Berlin-Mitte",Konzerte,52.5266977,13.4091365
+94,31/12/2019,"Schaperstraße 24, 10719 Berlin-Wilmersdorf",Konzerte,52.49887445133727,13.32850067890669
+95,31/12/2019,"Schloßstraße 48 A, 12165 Berlin-Steglitz",Konzerte,52.4542489,13.3150998
+96,31/12/2019,"Schloßstraße 48 A, 12165 Berlin-Steglitz",Konzerte,52.4542489,13.3150998
+97,31/12/2019,"Stargarder Straße 77, 10437 Berlin-Prenzlauer Berg",Konzerte,52.54764399357961,13.415733445518821
+98,31/12/2019,"Unter den Linden 7, 10117 Berlin-Mitte",Konzerte,52.51708609890418,13.394682104091348
+99,31/12/2019,"Warmbrunner Straße 52, 14193 Berlin-Wilmersdorf",Konzerte,52.48604543094385,13.296201787355196
+100,01/01/2020,"Am Kupfergraben, 10117 Berlin-Mitte",Konzerte,52.5208183,13.3925513
+101,01/01/2020,"Gendarmenmarkt, 10117 Berlin-Mitte",Konzerte,52.5126292,13.3882664
+102,01/01/2020,"Rosa-Luxemburg-Platz, 10178 Berlin-Mitte",Konzerte,52.5266977,13.4091365
+103,01/01/2020,"Rosa-Luxemburg-Platz, 10178 Berlin-Mitte",Konzerte,52.5266977,13.4091365
+104,01/01/2020,"Schlossinsel 1, 12557 Berlin-Köpenick",Konzerte,52.4432765,13.5715638
+105,01/01/2020,"Schloßstraße 48 A, 12165 Berlin-Steglitz",Konzerte,52.4542489,13.3150998
+106,01/01/2020,"Unter den Linden 7, 10117 Berlin-Mitte",Konzerte,52.51708609890418,13.394682104091348
