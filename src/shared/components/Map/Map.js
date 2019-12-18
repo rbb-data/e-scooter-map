@@ -35,13 +35,13 @@ const Map = props => {
   const berlin = {
     center: { lat: 52.5244, lng: 13.4105 },
     bounds: {
-      topleft: { lat: 52.6, lng: 13.2 },
-      bottomright: { lat: 52.4, lng: 13.6 }
+      topleft: { lat: 52.7, lng: 13.1 },
+      bottomright: { lat: 52.3, lng: 13.5 }
     },
     maxBounds: {
       topleft: { lat: 52.8, lng: 12.9 },
       bottomright: { lat: 52.2, lng: 13.9 }
-    }
+		}
   }
 
   const mapProps = {
@@ -99,7 +99,7 @@ const Map = props => {
 
     {/* <Rectangle bounds={mapProps.bounds} /> */}
 
-    <ZoomControl position='bottomright' />
+    {/* <ZoomControl position='bottomright' /> */}
 
     {children}
   </LeafletMap>
