@@ -1,7 +1,7 @@
 const Papa = require('papaparse')
 const path = require('path')
 const fs = require('fs')
-const content = fs.createReadStream(path.join(__dirname, '../data/e_scooters_frontend.csv'))
+const content = fs.createReadStream(path.join(__dirname, '../data/events.csv'))
 
 Papa.parse(content, {
   header: true,
@@ -15,7 +15,7 @@ Papa.parse(content, {
 				var m = str.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
 				return (m) ? new Date(m[3], m[2]-1, m[1], 12) : null;
 			}
-
+			
       return {
         type: 'Feature',
         properties: {
