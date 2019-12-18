@@ -8,17 +8,16 @@ import stopIcon from './stopIcon.svg'
 import _ from './HourSelector.module.sass'
 
 export default function HourSelector (props) {
-	console.log('props', props)
   const { selectedHour, histogramData, histogramMax, onChange } = props
 	const [isFirstPlay, setIsFirstPlay] = useState(true)
 	
   const [isAnimating, setIsAnimating] = useAutoStepper(() => {
 		// TODO
-		const minDate = '2019-12-09T11:00:00.000Z'
-		const maxDate = '2020-01-09T11:00:00.000Z'
+		const minDate = '2019-12-18T11:00:00.000Z'
+		const maxDate = '2020-01-02T11:00:00.000Z'
 
 		function addDays(date, days) {
-			if (date === '2020-01-09T11:00:00.000Z' || date === '2020-01-10T11:00:00.000Z' ) {
+			if (date === '2020-01-02T11:00:00.000Z') {
 				return minDate
 			}
 			let result = new Date(date)
