@@ -10,10 +10,10 @@ import _ from './HourSelector.module.sass'
 export default function HourSelector (props) {
 	console.log('props', props)
   const { selectedHour, histogramData, histogramMax, onChange } = props
-  const [isFirstPlay, setIsFirstPlay] = useState(true)
+	const [isFirstPlay, setIsFirstPlay] = useState(true)
+	
   const [isAnimating, setIsAnimating] = useAutoStepper(() => {
-		console.log('histogramData', histogramData)
-
+		// TODO
 		const minDate = '2019-12-09T11:00:00.000Z'
 		const maxDate = '2020-01-09T11:00:00.000Z'
 
@@ -23,7 +23,6 @@ export default function HourSelector (props) {
 			}
 			let result = new Date(date)
 			result.setDate(result.getDate() + days)
-			console.log('result.toISOString()', result.toISOString())
 			return result.toISOString()
 		}
 
@@ -36,7 +35,7 @@ export default function HourSelector (props) {
 		}
 		if (isFirstPlay) setIsFirstPlay(false)
 
-  }, [selectedHour, onChange, isFirstPlay], 2000)
+  }, [selectedHour, onChange, isFirstPlay], 1500)
 
 
   return <div className={_.wrapper}>

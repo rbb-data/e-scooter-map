@@ -5,12 +5,8 @@ import _ from './Histogram.module.sass'
 
 export default function Histogram (props) {
 	const { values, max, highlight, onClick } = props
-
-	console.log('props in histogram', props)
 	
-	const values_only = Object.values(values)
 	const keys_only = Object.keys(values)
-
 	const keys = keys_only.sort(function(a, b) {
 		return new Date(b) - new Date(a);
 	})
@@ -18,17 +14,13 @@ export default function Histogram (props) {
 
 	var sorted_values = []
 	sorted_keys.forEach(key => sorted_values.push(values[key]))
-	console.log('sorted_values', sorted_values)
-
 	const normalizedValues = sorted_values.map(val => val / max)
 
 	const margin = 0.22
 	
-	console.log('VALUES', values)
-
   return <svg
     className={_.svg}
-    viewBox={`0 0 ${normalizedValues.length} 3.5`}
+    viewBox={`0 0 ${normalizedValues.length} 4.5`}
     width='100%'
     xmlns='http://www.w3.org/2000/svg'>
 		{normalizedValues.map((val, i) =>
@@ -43,6 +35,15 @@ export default function Histogram (props) {
 				{ i % 2 === 0 &&
 					<text className={_.text} x={i + 0.5} y='3.5' textAnchor='middle' fill={sorted_keys[i] === highlight ? red : darkGrey}>{ new Date(sorted_keys[i]).getDate() }</text>
 				}
+
+				{ (new Date(sorted_keys[i]).getDate() === 9) && 
+					<text className={_.text} x={i + 2} y='4.4' textAnchor='middle' fill={darkGrey}>Dezember</text>
+				}
+				{ (new Date(sorted_keys[i]).getDate() === 1) && 
+					<text className={_.text} x={i + 1.5} y='4.4' textAnchor='middle' fill={darkGrey}>Januar</text>
+				}
+
+
       </g>
     )}
   </svg>

@@ -40,10 +40,7 @@ function createClusterIcon (cluster) {
 }
 
 export default function Markers (props) {
-	console.log('ClusteredMarkers', props)
-
 	const { markers } = props
-	
 
   return <GeoJsonCluster
     features={markers}
