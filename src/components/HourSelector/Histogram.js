@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { darkGrey, red, gold } from '../../shared/styles/colors.sass'
+import { darkGrey, gold } from '../../shared/styles/colors.sass'
 import _ from './Histogram.module.sass'
 
 export default function Histogram (props) {
@@ -47,5 +47,5 @@ Histogram.propTypes = {
   onClick: PropTypes.func,
   values: PropTypes.array,
   max: PropTypes.number,
-  highlight: PropTypes.number
+  highlight: PropTypes.string
 }

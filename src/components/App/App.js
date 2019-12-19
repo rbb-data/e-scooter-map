@@ -3,20 +3,14 @@
 import React, { useState, useEffect, useMemo } from 'react'
 import 'whatwg-fetch'
 import Map from '../../shared/components/Map/Map'
-// import TabBar from '../../shared/components/TabBar/TabBar'
-// import track from '../../lib/tracking'
 import HourSelector from '../HourSelector/HourSelector'
-// import TileMarkers from '../Markers/TileMarkers'
 import Markers from '../Markers/Markers'
-// import ClusteredMarkers from '../Markers/ClusteredMarkers'
 import _ from './App.module.sass'
-
-// const filterOptions = ['Alle', 'Kabarett', 'Konzerte', 'Musical', 'Oper', 'Theater']
 
 function App (props) {
   const [markers, setMarkers] = useState([])
   const [hour, setHour] = useState('2019-12-18T11:00:00.000Z')
-  const [vendorFilter, setVendorFilter] = useState('Konzerte')
+  const [vendorFilter] = useState('Konzerte')
 
   useEffect(() => {
     async function fetchMarkers () {

@@ -61,7 +61,7 @@ export default function HourSelector (props) {
 }
 
 HourSelector.propTypes = {
-  selectedHour: PropTypes.number,
+  selectedHour: PropTypes.string,
   onChange: PropTypes.func,
   histogramData: PropTypes.array,
   histogramMax: PropTypes.number
