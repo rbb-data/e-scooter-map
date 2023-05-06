@@ -20,7 +20,7 @@
     "react-dom": "^16.8.4",
     "react-leaflet": "^2.2.1",
     "react-leaflet-bing": "^4.1.0",
-    "react-scripts": "2.1.8",
+    "react-scripts": "5.0.1",
     "source-map-explorer": "^2.0.0",
     "whatwg-fetch": "^3.0.0"
   },
